@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Справочники — Группы и Песни</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Manrope:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-brand">
+                <span class="brand-icon">♪</span>
+                <h1 class="brand-title">Справочники</h1>
+            </div>
+            <div class="header-meta">
+                Козловская Эмилия &nbsp;·&nbsp; Курс&nbsp;3 &nbsp;·&nbsp; Группа&nbsp;2 &nbsp;·&nbsp; 2026
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <div class="toolbar">
+            <div class="dict-tabs">
+                <button class="tab-btn active" data-dict="bands">
+                    <span class="tab-icon">🎸</span> Музыкальные группы
+                </button>
+                <button class="tab-btn" data-dict="songs">
+                    <span class="tab-icon">🎵</span> Песни
+                </button>
+            </div>
+            <button class="btn btn-primary" id="btn-add">
+                <span>+</span> Добавить
+            </button>
+        </div>
+
+        <div class="table-wrap">
+            <table id="data-table">
+                <thead id="table-head"></thead>
+                <tbody id="table-body"></tbody>
+            </table>
+            <div id="empty-state" class="empty-state" style="display:none">
+                <div class="empty-icon">◎</div>
+                <p>Нет записей</p>
+            </div>
+            <div id="loading" class="loading">Загрузка...</div>
+        </div>
+
+    </main>
+
+    <!-- MODAL -->
+    <div id="modal-overlay" class="modal-overlay" style="display:none">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title">Добавить запись</h2>
+                <button class="modal-close" id="modal-close">✕</button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" id="modal-cancel">Отмена</button>
+                <button class="btn btn-primary" id="modal-save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONFIRM DELETE -->
+    <div id="confirm-overlay" class="modal-overlay" style="display:none">
+        <div class="modal modal-sm">
+            <div class="modal-header">
+                <h2>Удалить запись?</h2>
+            </div>
+            <div class="modal-body">
+                <p id="confirm-text" style="color:var(--text-secondary);margin:0"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" id="confirm-cancel">Отмена</button>
+                <button class="btn btn-danger" id="confirm-ok">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
