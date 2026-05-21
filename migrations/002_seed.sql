@@ -2,12 +2,12 @@ INSERT INTO bands (name, genre, country, founded_date, members_count, descriptio
 VALUES
   ('One Direction', 'Pop', 'Великобритания', '2010-07-23', 5,
    'Самый лучший бойз-бэнд всех времен.'),
-  ('Nirvana', 'Grunge', 'США', '1987-01-01', 3, 9.2,
+  ('Nirvana', 'Grunge', 'США', '1987-01-01', 3,
    'Культовая гранж-группа из Абердина.'),
-  ('Кино', 'Рок', 'СССР', '1982-01-01', 4, 9.7,
+  ('Кино', 'Рок', 'СССР', '1982-01-01', 4,
    'Советская рок-группа Виктора Цоя.');
 
-INSERT INTO songs (title, band_id, duration_sec, release_date)
+INSERT INTO songs (title, band_id, duration, release_date)
 VALUES
   ('Night Changes',          1, 226, '2014-11-14'),
   ('What makes you beautiful?',      1, 209, '2011-09-11'),
