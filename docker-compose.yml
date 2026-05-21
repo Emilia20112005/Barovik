@@ -21,6 +21,8 @@ services:
       - "8080:8080"
     env_file:
       - .env
+    environment:
+      - POSTGRES_HOST=barovik-postgres
     depends_on:
       - barovik-postgres
 

@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/Emilia20112005/Barovik/internal/db"
+	"github.com/joho/godotenv"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
+	if err := godotenv.Load(); err != nil {
+		log.Println("Ошибка загрузки .env файла:", err)
+	}
+	db.Connect()
+	log.Println("Приложение запущено")
 }
